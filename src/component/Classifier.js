@@ -14,7 +14,7 @@ function Classifier({word, definition, onScore, onWordChange}) {
     }
     return (
     <>
-        <input key={word} type="text" defaultValue={word} onInput={handleOnInput}/>
+        <p><input key={word} type="text" defaultValue={word} onInput={handleOnInput}/></p>
         <p className="description"><i>-&nbsp;{definition}</i></p>
         <p>
             <ul>
