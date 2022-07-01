@@ -2,11 +2,17 @@ import { useState } from 'react';
 import './App.css';
 import Classifier from './component/Classifier';
 import Loader from './component/Loader';
-import Saver from './component/Saver';
+import { saveAs } from '@progress/kendo-file-saver';
 
 function App() {
   const [currentJSON, setCurrentJSON] = useState({});
   const [word, setWord] = useState({word : undefined, definition : undefined});
+  const [isDirty, setIsDirty] = useState(false);
+
+  const handleOnSave = function () {
+    setIsDirty( () => false);
+    saveAs(new Blob([JSON.stringify(currentJSON)]), 'file.json');        
+  }
 
   const nextWord = (dictionary) => {
     const wordName = Object.keys(dictionary).find((item) => !dictionary[item]["score"]);
@@ -21,6 +27,7 @@ function App() {
   }
   
   const handleOnScore = (word, score) => {
+    setIsDirty(()=>true);
     setCurrentJSON( (prev) => {
       prev[word]["score"] = score;
       setWord( () => nextWord(prev));
@@ -53,14 +60,19 @@ function App() {
     }
 
   }
+
+  window.onbeforeunload = () => {
+    word && word.word && isDirty && handleOnSave();
+  }
+
   return (
     <div className="App" tabIndex={-1} onKeyPress={handleKey}>
       <header className="App-header">
-        <p><Loader onJSONUploaded={handleOnJSONLoaded}/></p>
+        <Loader onJSONUploaded={handleOnJSONLoaded}/>
         <br/>
-        <p><Classifier {...word} onScore={handleOnScore} onWordChange={handleOnWordChange}/>        </p>
+        <Classifier {...word} onScore={handleOnScore} onWordChange={handleOnWordChange}/>
         <br/>
-        {(word && word.word) && <p><Saver jsonObject={currentJSON} /></p>}
+        {word && word.word && <p><button onClick={handleOnSave}>Сохранить словарь</button></p>}
       </header>
     </div>
   );

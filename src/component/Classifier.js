@@ -16,21 +16,19 @@ function Classifier({word, definition, onScore, onWordChange}) {
     <>
         <p><input key={word} type="text" defaultValue={word} onInput={handleOnInput}/></p>
         <p className="description"><i>-&nbsp;{definition}</i></p>
-        <p>
-            <ul>
-                <li key="1">
-                    <button className="button-easy" onClick={()=>onScore(word, 1)}>[1] Просто</button>
-                </li>
-                &nbsp;
-                <li key="2">
-                    <button className="button-medium" onClick={()=>onScore(word, 2)}>[2] Обычно</button>
-                </li>
-                &nbsp;
-                <li key="3">
-                    <button className="button-hard" onClick={()=>onScore(word, 3)}>[3] Сложно</button>
-                </li>
-            </ul>
-        </p>
+        <ul>
+            <li key="1">
+                <button className="button-easy" onClick={()=>onScore(word, 1)}>[1] Просто</button>
+            </li>
+            &nbsp;
+            <li key="2">
+                <button className="button-medium" onClick={()=>onScore(word, 2)}>[2] Обычно</button>
+            </li>
+            &nbsp;
+            <li key="3">
+                <button className="button-hard" onClick={()=>onScore(word, 3)}>[3] Сложно</button>
+            </li>
+        </ul>
     </>
     )
 }
