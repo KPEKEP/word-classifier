@@ -40,7 +40,6 @@ function App() {
       return;
     }
 
-    console.log(word, event.key);
     if (event.key === "1") {
       handleOnScore(word.word, 1);
     }

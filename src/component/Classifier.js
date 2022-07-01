@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 function Classifier({word, definition, onScore, onWordChange}) { 
-    const [inputValue, setInputValue] = useState(word);
-    console.log(inputValue);
-
+    const [, setInputValue] = useState(word);
+    
     if (!word || !definition || !onScore) {
         return <></>;
     }
@@ -14,7 +13,7 @@ function Classifier({word, definition, onScore, onWordChange}) {
         onWordChange(event);
     }
     return (
-    <div>
+    <>
         <input key={word} type="text" defaultValue={word} onInput={handleOnInput}/>
         <p className="description"><i>-&nbsp;{definition}</i></p>
         <p>
@@ -32,7 +31,7 @@ function Classifier({word, definition, onScore, onWordChange}) {
                 </li>
             </ul>
         </p>
-    </div>
+    </>
     )
 }
 

@@ -25,10 +25,10 @@ function Loader({onJSONUploaded}) {
     }
 
     return (
-    <div>
-        <label for="files" >&nbsp;Загрузить словарь&nbsp;</label>
+    <>
+        <label htmlFor="files" >&nbsp;Загрузить словарь&nbsp;</label>
         <input id="files" style={{visibility:"hidden"}} type="file" accept="text/javascript,application/json" onChange={handleSelect}/>
-    </div>
+    </>
     )
 }
 

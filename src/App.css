@@ -49,24 +49,31 @@ button,input,label {
   border-style : none;
   outline-style : none;
   font-size: xx-large;
-  color : white;
   background-color: #888888;
   cursor: pointer;
   border-radius: 5px;
 }
 
+button:hover,label:hover,input:hover {
+  background-color: #317a8b;
+}
+
+input:hover {
+  cursor: auto;
+}
+
 .button-easy {
-  background-color: lime;
+  background-color: #008800;
   color : black;
 }
 
 .button-medium {
-  background-color: orange;
+  background-color: #888800;
   color : black;
 }
 
 .button-hard {
-  background-color: brown;
+  background-color: #880000;
 }
 
 li {
