@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/word-classifier/static/css/main.073c9b0a.css",
+    "main.js": "/word-classifier/static/js/main.d055aab7.js",
+    "static/js/787.c4e5a731.chunk.js": "/word-classifier/static/js/787.c4e5a731.chunk.js",
+    "index.html": "/word-classifier/index.html",
+    "main.073c9b0a.css.map": "/word-classifier/static/css/main.073c9b0a.css.map",
+    "main.d055aab7.js.map": "/word-classifier/static/js/main.d055aab7.js.map",
+    "787.c4e5a731.chunk.js.map": "/word-classifier/static/js/787.c4e5a731.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.d055aab7.js"
+  ]
+}
