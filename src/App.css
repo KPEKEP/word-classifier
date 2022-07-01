@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+input[type=text] {
+  font-size:xx-large;
+  background-color: #282c34;
+  color:#FFFFFF;
+  border-style: ridge;
+  text-align: center;
+}
+
+button {
+  border-style : none;
+  outline-style : none;
+}
+
+.button-easy {
+  background-color: lime;
+}
+
+.button-medium {
+  background-color: orange;
+}
+
+.button-hard {
+  background-color: brown;
+}
