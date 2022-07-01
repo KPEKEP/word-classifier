@@ -45,19 +45,35 @@ input[type=text] {
   text-align: center;
 }
 
-button {
+button,input,label {
   border-style : none;
   outline-style : none;
+  font-size: xx-large;
+  color : white;
+  background-color: #888888;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .button-easy {
   background-color: lime;
+  color : black;
 }
 
 .button-medium {
   background-color: orange;
+  color : black;
 }
 
 .button-hard {
   background-color: brown;
+}
+
+li {
+  display: inline;
+}
+
+.description {
+  display: inline-block;
+  max-width: 80%;
 }

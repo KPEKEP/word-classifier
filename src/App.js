@@ -57,9 +57,11 @@ function App() {
   return (
     <div className="App" tabIndex={-1} onKeyPress={handleKey}>
       <header className="App-header">
-        <Loader onJSONUploaded={handleOnJSONLoaded}/>
-        <Classifier {...word} onScore={handleOnScore} onWordChange={handleOnWordChange}/>        
-        <Saver jsonObject={currentJSON} />
+        <p><Loader onJSONUploaded={handleOnJSONLoaded}/></p>
+        <br/>
+        <p><Classifier {...word} onScore={handleOnScore} onWordChange={handleOnWordChange}/>        </p>
+        <br/>
+        {(word && word.word) && <p><Saver jsonObject={currentJSON} /></p>}
       </header>
     </div>
   );

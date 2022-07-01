@@ -10,7 +10,7 @@ function Saver({jsonObject}) {
     }
         
     return (
-        <button onClick={handleOnClick}>Сохранить</button>
+        <button onClick={handleOnClick}>Сохранить словарь</button>
     )
 }
 
